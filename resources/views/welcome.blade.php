@@ -29,9 +29,11 @@
                                 </div>
                             </div>
                             <div class="d-grid d-md-flex flex-row gap-2">
-                                <a href="" class="btn btn-primary btn-lg">Découvrez nos formations</a>
+                                <a href="{{ route('home.formation') }}" class="btn btn-primary btn-lg">Découvrez nos
+                                    formations</a>
                                 <a href="" class="btn btn-outline-secondary btn-lg">Demandez une brochure</a>
-                                <a href="" class="btn btn-outline-secondary btn-lg">Postulez maintenant</a>
+                                <a href="{{ route('home.postuler') }}" class="btn btn-outline-secondary btn-lg">Postulez
+                                    maintenant</a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +161,8 @@
                                     pédagogique innovante et son réseau solide de partenaires.</p>
                             </div>
                             <div>
-                                <a href="#!" class="btn btn-outline-secondary">Découvrir nos atouts</a>
+                                <a href="{{ route('home.formation') }}" class="btn btn-outline-secondary">Découvrir nos
+                                    atouts</a>
                             </div>
                         </div>
                     </div>
@@ -222,14 +225,16 @@
                     <div class="col-xl-3 col-md-6 col-12">
                         <div class="card card-lift h-100 text-center text-lg-start">
                             <div class="p-2">
-                                <a href="#"><img src="{{ asset('cours1.jpg') }}" alt="Formation BTS"
-                                        class="img-fluid rounded-3 w-100"></a>
+                                <a href="{{ route('btp.batiment') }}"><img src="{{ asset('cours1.jpg') }}"
+                                        alt="Formation BTS" class="img-fluid rounded-3 w-100"></a>
                             </div>
                             <div class="card-body pt-2">
-                                <h3><a class="text-inherit" href="#">BTS Métiers du Bâtiment</a></h3>
+                                <h3><a class="text-inherit" href="{{ route('btp.batiment') }}">BTS Métiers du
+                                        Bâtiment</a></h3>
                                 <p>Développez vos compétences pratiques et théoriques dans le domaine du bâtiment avec notre
                                     programme BTS, adapté aux besoins actuels du secteur.</p>
-                                <a href="#!" class="icon-link icon-link-hover link-primary fw-semibold">
+                                <a href="{{ route('btp.batiment') }}"
+                                    class="icon-link icon-link-hover link-primary fw-semibold">
                                     <span>Voir les détails</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                         fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -246,15 +251,17 @@
                     <div class="col-xl-3 col-md-6 col-12">
                         <div class="card card-lift h-100 text-center text-lg-start">
                             <div class="p-2">
-                                <a href="#"><img src="{{asset('cours2.jpg')}}" alt="Formation Bachelor"
+                                <a href="#"><img src="{{ asset('cours2.jpg') }}" alt="Formation Bachelor"
                                         class="img-fluid rounded-3 w-100"></a>
                             </div>
                             <div class="card-body pt-2">
-                                <h3><a class="text-inherit" href="#">Bachelor en Gestion de Projets de
+                                <h3><a class="text-inherit" href="{{ route('btp.bachelor') }}">Bachelor en Gestion de
+                                        Projets de
                                         Construction</a></h3>
                                 <p>Acquérez des compétences approfondies dans la gestion de projets complexes, de la
                                     planification à la réalisation, pour exceller dans le secteur de la construction.</p>
-                                <a href="#!" class="icon-link icon-link-hover link-primary fw-semibold">
+                                <a href="{{ route('btp.bachelor') }}"
+                                    class="icon-link icon-link-hover link-primary fw-semibold">
                                     <span>Voir les détails</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                         fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -271,15 +278,17 @@
                     <div class="col-xl-3 col-md-6 col-12">
                         <div class="card card-lift h-100 text-center text-lg-start">
                             <div class="p-2">
-                                <a href="#"><img src="{{asset('best-woman.jpg')}}" alt="Formation Master"
+                                <a href="#"><img src="{{ asset('best-woman.jpg') }}" alt="Formation Master"
                                         class="img-fluid rounded-3 w-100"></a>
                             </div>
                             <div class="card-body pt-2">
-                                <h3><a class="text-inherit" href="#">Master en Entrepreneuriat et Innovation</a>
+                                <h3><a class="text-inherit" href="{{ route('btp.master.entreprenarait') }}">Master en
+                                        Entrepreneuriat et Innovation</a>
                                 </h3>
                                 <p>Formez-vous à la gestion d’entreprises innovantes et apprenez à naviguer dans les défis
                                     entrepreneuriaux du secteur du bâtiment et des travaux publics.</p>
-                                <a href="#!" class="icon-link icon-link-hover link-primary fw-semibold">
+                                <a href="{{ route('btp.master.entreprenarait') }}"
+                                    class="icon-link icon-link-hover link-primary fw-semibold">
                                     <span>Voir les détails</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                         fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -296,15 +305,17 @@
                     <div class="col-xl-3 col-md-6 col-12">
                         <div class="card card-lift h-100 text-center text-lg-start">
                             <div class="p-2">
-                                <a href="#"><img src="{{asset('gestion-chantiers.jpg')}}"
+                                <a href="#"><img src="{{ asset('gestion-chantiers.jpg') }}"
                                         alt="Formation Professionnelle" class="img-fluid rounded-3 w-100"></a>
                             </div>
                             <div class="card-body pt-2">
-                                <h3><a class="text-inherit" href="#">Formation Professionnelle en Gestion de
+                                <h3><a class="text-inherit" href="{{ route('btp.master.gestion.chantier') }}">Formation
+                                        Professionnelle en Gestion de
                                         Chantier</a></h3>
                                 <p>Acquérez les compétences essentielles pour gérer efficacement un chantier, du démarrage à
                                     la livraison, en intégrant des méthodes et outils modernes.</p>
-                                <a href="#!" class="icon-link icon-link-hover link-primary fw-semibold">
+                                <a href="{{ route('btp.master.gestion.chantier') }}"
+                                    class="icon-link icon-link-hover link-primary fw-semibold">
                                     <span>Voir les détails</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                         fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">

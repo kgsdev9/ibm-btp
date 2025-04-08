@@ -24,48 +24,20 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid px-0">
             <!-- Logo de l'institut -->
-            <a class="navbar-brand" href=""><img src="{{ asset('assets/ipmbtepe.jpg') }}" style="height:40px;"
-                    alt="Institut" /></a>
+            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/ipmbtepe.jpg') }}"
+                    style="height:40px;" alt="Institut" /></a>
 
             <!-- Mobile view nav wrap -->
             <div class="ms-auto d-flex align-items-center order-lg-3">
                 <ul class="navbar-nav navbar-right-wrap ms-2 flex-row d-none d-md-block">
                     <!-- Dropdown Menu (User Profile) -->
                     <li class="dropdown ms-2 d-inline-block position-static">
-                        <a class="rounded-circle" href="#" data-bs-toggle="dropdown" data-bs-display="static"
-                            aria-expanded="false">
+                        <a class="rounded-circle" href="{{ route('auth.login') }}" aria-expanded="false">
                             <div class="avatar avatar-md avatar-indicators avatar-online">
                                 <img alt="avatar" src="../assets/images/avatar/avatar-1.jpg" class="rounded-circle" />
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end position-absolute mx-3 my-5">
-                            <div class="dropdown-item">
-                                <div class="d-flex">
-                                    <div class="avatar avatar-md avatar-indicators avatar-online">
-                                        <img alt="avatar" src="../assets/images/avatar/avatar-1.jpg"
-                                            class="rounded-circle" />
-                                    </div>
-                                    <div class="ms-3 lh-1">
-                                        <h5 class="mb-1">{{ Auth::user()->name ?? '' }}</h5>
-                                        <p class="mb-0">{{ Auth::user()->email ?? '' }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <ul class="list-unstyled">
-                                <li><a class="dropdown-item" href=""><i class="fe fe-user me-2"></i> Mes
-                                        cours</a></li>
-                                <li><a class="dropdown-item" href=""><i class="fe fe-star me-2"></i> Mes
-                                        Matieres</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fe fe-settings me-2"></i> Mes
-                                        QCMS</a></li>
-                            </ul>
-                            <div class="dropdown-divider"></div>
-                            <ul class="list-unstyled">
-                                <li><a class="dropdown-item" href=""><i class="fe fe-power me-2"></i>
-                                        Déconnexion</a></li>
-                            </ul>
-                        </div>
+
                     </li>
                 </ul>
             </div>
@@ -99,8 +71,8 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFormations"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Nos Formations</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFormations" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Nos Formations</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownFormations">
                             <li><a class="dropdown-item" href="#">Filière Universitaire</a></li>
                             <li><a class="dropdown-item" href="#">Filière Professionnelle</a></li>
@@ -121,7 +93,7 @@
                     </li>
 
                     <li class="nav-item"><a class="nav-link" href="#">Partenariats et Innovation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home.contact') }}">Contact</a></li>
                 </ul>
 
                 {{-- <!-- Social Media Links -->
@@ -166,22 +138,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-3 col-6">
-                    <div class="d-flex flex-column gap-3">
-                        <span class="text-dark-stable">RESSOURCES</span>
-                        <ul class="list-unstyled mb-0 d-flex flex-column nav nav-footer nav-x-0">
-                            <li>
-                                <a href="#!" class="nav-link">À propos</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="nav-link">Devenir partenaire</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="nav-link">Nos partenaires</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+             
                 <div class="col-xl-2 col-md-3 col-6">
                     <div class="d-flex flex-column gap-3">
                         <span class="text-dark-stable">NOS PAGES</span>
@@ -200,10 +157,11 @@
                         <span class="text-dark-stable">ACCOMPAGNEMENT</span>
                         <ul class="list-unstyled mb-0 d-flex flex-column nav nav-footer nav-x-0">
                             <li>
-                                <a href="#!" class="nav-link" target="_blank">Postuler</a>
+                                <a href="{{ route('home.postuler') }}" class="nav-link" target="_blank">Postuler</a>
                             </li>
                             <li>
-                                <a href="#!" class="nav-link" target="_blank">Nos formations</a>
+                                <a href="{{ route('home.formation') }}" class="nav-link" target="_blank">Nos
+                                    formations</a>
                             </li>
                         </ul>
                     </div>

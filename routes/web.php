@@ -70,6 +70,12 @@ Route::get('/dashboards', [DashboardController::class, 'index'])->name('dashboar
 Route::post('/createNewTeacher', [FormateurController::class, 'store'])->name('post.new.formateur');
 
 
+
+Route::get('/postuler', [HomeController::class, 'postuler'])->name('home.postuler');
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::get('/nos-formations', [HomeController::class, 'formation'])->name('home.formation');
+
+
 Route::resources([
     'category' => GestionCategoryController::class,
     'coupon' => GestionCouponController::class,
@@ -139,6 +145,26 @@ Route::get('/fac', function () {
 Route::get('/quisommesnous', function () {
     return view('home.about');
 })->name('about');
+
+
+Route::get('/detail/btp', function () {
+    return view('home.detailone');
+})->name('btp.batiment');
+
+
+Route::get('/detail/bahcelor', function () {
+    return view('home.detailtwo');
+})->name('btp.bachelor');
+
+
+Route::get('/detail/master-entrepreneuriat-innovation', function () {
+    return view('home.detailMasterEntrepreneuriat');
+})->name('btp.master.entreprenarait');
+
+
+Route::get('/detail/formation-gestion-chantier', function () {
+    return view('home.detailGestionChantier');
+})->name('btp.master.gestion.chantier');
 
 
 

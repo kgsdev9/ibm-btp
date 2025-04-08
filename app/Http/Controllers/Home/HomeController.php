@@ -50,6 +50,23 @@ class HomeController extends Controller
         ]);
     }
 
+
+    public function postuler()
+    {
+        return view('home.postuler', []);
+    }
+
+    public function contact()
+    {
+        return view('home.contact', []);
+    }
+
+    public function formation()
+    {
+        return view('home.formation', []);
+    }
+
+
     public function profileCandidat()
     {
         return view('Auth.register');
