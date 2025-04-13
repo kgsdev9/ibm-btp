@@ -143,7 +143,7 @@
                                     infrastructures.</p>
                             </div>
                             <div>
-                                <a href="#!" class="btn btn-outline-primary">Lire notre histoire</a>
+                                <a href="{{route('universite')}}" class="btn btn-outline-primary">Lire notre histoire</a>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                                     départements académiques et les équipes administratives.</p>
                             </div>
                             <div>
-                                <a href="#!" class="btn btn-outline-primary">En savoir plus</a>
+                                <a href="{{route('universite')}}" class="btn btn-outline-primary">En savoir plus</a>
                             </div>
                         </div>
                     </div>

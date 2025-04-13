@@ -166,6 +166,25 @@ Route::get('/detail/formation-gestion-chantier', function () {
     return view('home.detailGestionChantier');
 })->name('btp.master.gestion.chantier');
 
+Route::get('/notre-universite', function () {
+    return view('home.notreuniversiste');
+})->name('universite');
+
+
+Route::get('/e-learning', function () {
+    return view('home.elearning');
+})->name('elearning');
+
+Route::get('/vie-etudiante', function () {
+    return view('home.vieetudiante');
+})->name('vie.etudiante');
+
+
+Route::get('/partenarait', function () {
+    return view('home.partenarait');
+})->name('partenariat');
+
+
 
 
 Route::get('/home-job-detail/{slug}', HomeDetailJob::class)->name('detail.job');

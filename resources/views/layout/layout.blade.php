@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title')</title>
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://geeksui.codescandy.com/geeks/assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('ipmbtepe.jpg') }}" />
+
+
     <!-- Libs CSS -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-icons/font/bootstrap-icons.min.css') }}">
@@ -24,8 +25,9 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid px-0">
             <!-- Logo de l'institut -->
-            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/ipmbtepe.jpg') }}"
-                    style="height:40px;" alt="Institut" /></a>
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="{{ asset('assets/ipmbtepe.jpg') }}" style="height:40px;" alt="Institut" />
+            </a>
 
             <!-- Mobile view nav wrap -->
             <div class="ms-auto d-flex align-items-center order-lg-3">
@@ -37,7 +39,6 @@
                                 <img alt="avatar" src="../assets/images/avatar/avatar-1.jpg" class="rounded-circle" />
                             </div>
                         </a>
-
                     </li>
                 </ul>
             </div>
@@ -53,67 +54,72 @@
                 </button>
             </div>
 
-            <!-- Navbar Links (Collapsed for Mobile) -->
+            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbar-default">
                 <ul class="navbar-nav mt-3 mt-lg-0 mx-xxl-auto">
-                    <!-- Menu principal avec sous-menus -->
-                    <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUniversite" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Notre Université</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownUniversite">
-                            <li><a class="dropdown-item" href="#">Notre Présentation IPMBTPE</a></li>
-                            <li><a class="dropdown-item" href="#">Notre Histoire</a></li>
-                            <li><a class="dropdown-item" href="#">Nos Atouts</a></li>
-                            <li><a class="dropdown-item" href="#">Notre Organisation</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Accueil</a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFormations" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Nos Formations</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownFormations">
-                            <li><a class="dropdown-item" href="#">Filière Universitaire</a></li>
-                            <li><a class="dropdown-item" href="#">Filière Professionnelle</a></li>
-                        </ul>
+                        <a class="nav-link {{ request()->routeIs('universite') ? 'active' : '' }}" href="{{ route('universite') }}">Notre Université</a>
+                        @can('is_admin')
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUniversite">
+                                <li><a class="dropdown-item" href="#">Notre Présentation IPMBTPE</a></li>
+                                <li><a class="dropdown-item" href="#">Notre Histoire</a></li>
+                                <li><a class="dropdown-item" href="#">Nos Atouts</a></li>
+                                <li><a class="dropdown-item" href="#">Notre Organisation</a></li>
+                            </ul>
+                        @endcan
                     </li>
-
-                    <li class="nav-item"><a class="nav-link" href="#">E-Learning</a></li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVieEtudiante"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Vie Etudiante</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownVieEtudiante">
-                            <li><a class="dropdown-item" href="#">Inscription (connexion/inscription)</a></li>
-                            <li><a class="dropdown-item" href="#">La Vie Etudiante à IPMBTPE</a></li>
-                            <li><a class="dropdown-item" href="#">Bibliothèque Numérique</a></li>
-                            <li><a class="dropdown-item" href="#">Insertion Professionnelle</a></li>
-                        </ul>
+                        <a class="nav-link {{ request()->routeIs('home.formation') ? 'active' : '' }}" href="{{ route('home.formation') }}">Nos Formations</a>
+                        @can('is_admin')
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownFormations">
+                                <li><a class="dropdown-item" href="#">Filière Universitaire</a></li>
+                                <li><a class="dropdown-item" href="#">Filière Professionnelle</a></li>
+                            </ul>
+                        @endcan
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">Partenariats et Innovation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home.contact') }}">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('elearning') ? 'active' : '' }}" href="{{ route('elearning') }}">E-Learning</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {{ request()->routeIs('vie.etudiante') ? 'active' : '' }}" href="{{ route('vie.etudiante') }}">Vie Etudiante</a>
+                        @can('is_admin')
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownVieEtudiante">
+                                <li><a class="dropdown-item" href="#">Inscription (connexion/inscription)</a></li>
+                                <li><a class="dropdown-item" href="#">La Vie Etudiante à IPMBTPE</a></li>
+                                <li><a class="dropdown-item" href="#">Bibliothèque Numérique</a></li>
+                                <li><a class="dropdown-item" href="#">Insertion Professionnelle</a></li>
+                            </ul>
+                        @endcan
+                    </li>
+
+                    @can('is_admin')
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('partenariat') ? 'active' : '' }}" href="{{ route('partenariat') }}">Partenariats et Innovation</a>
+                        </li>
+                    @endcan
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('home.contact') ? 'active' : '' }}" href="{{ route('home.contact') }}">Contact</a>
+                    </li>
                 </ul>
-
-                {{-- <!-- Social Media Links -->
-                <ul class="navbar-nav mt-3 mt-lg-0 ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Facebook</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">LinkedIn</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Instagram</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Twitter</a></li>
-                </ul> --}}
 
                 <!-- Search Bar -->
                 <form class="mt-3 mt-lg-0 me-lg-5 d-flex align-items-center">
                     <span class="position-absolute ps-3 search-icon"><i class="fe fe-search"></i></span>
-                    <label for="search" class="visually-hidden"></label>
-                    <input type="search" id="search" class="form-control ps-6"
-                        placeholder="Rechercher un cours" />
+                    <label for="search" class="visually-hidden">Rechercher</label>
+                    <input type="search" id="search" class="form-control ps-6" placeholder="Rechercher un cours" />
                 </form>
             </div>
         </div>
     </nav>
+
 
 
 
@@ -138,7 +144,7 @@
                         </p>
                     </div>
                 </div>
-             
+
                 <div class="col-xl-2 col-md-3 col-6">
                     <div class="d-flex flex-column gap-3">
                         <span class="text-dark-stable">NOS PAGES</span>
